@@ -1,0 +1,138 @@
+.wrapper {
+  display: flex;
+}
+
+/* side-bar  */
+.side-bar {
+  height: 100vh;
+  width: 300px;
+}
+/* side-bar上段  */
+.side-header {
+  height: 100px;
+  background-color:#253141 ;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-name a {
+  color: #FAFAFA;
+  font-size: 16px;
+  text-decoration: none;
+}
+.create-room a {
+  border: 1px solid lightblue;
+  padding: 14px;
+  font-size: 10px;
+  color: deepskyblue;
+  text-decoration: none;
+}
+
+/* side-bar下段 */
+.side-rooms {
+  height: calc(100vh - 100px);
+  background-color: #2f3e51;
+  padding: 0 20px;
+  overflow: scroll;
+}
+.room {
+padding: 20px 0 40px;
+}
+.room-name a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* main ヘッダー*/
+.chat-header {
+  height: 100px;
+  background-color: #ffffff;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.header-title {
+  font-size: 24px;
+  color: #333;
+  margin: 36px 40px ;
+}
+.header-button {
+  margin: 40px;
+}
+.header-button a {
+  border: 1px solid darkred;
+  color: darkred;
+  padding: 20px;
+  text-decoration: none;
+}
+
+/* main メッセージ一覧 */
+.messages {
+  height: calc(100vh - 190px);
+  width: calc(100vw - 300px);
+  background-color: #FAFAFA;
+  padding: 46px 40px 20px;
+  overflow: scroll;
+}
+.message {
+  margin: 10px 0 0 0;
+}
+.upper-message {
+  display: flex;
+}
+.message-user {
+  color: #434A54;
+}
+.message-date {
+  padding-left: 10px;
+  font-size: 12px;
+  color: #999;
+}
+.lower-message {
+margin-top: 10px;
+}
+.message-content {
+  font-size:14px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+ /* main フォーム  */
+.form {
+  height: 90px;
+  background-color: #DDDDDD;
+  padding: 20px 40px;
+  display: flex;
+}
+.form-input {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+}
+.form-message {
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+  border: none;
+}
+.form-image {
+  width: 60px;
+  background-color: lightblue;
+  font-size: 12px;
+  color: #ffffff;
+  padding: 12px;
+  margin: 5px 10px;
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+.form-submit {
+  height: 50px;
+  background-color: #38aef0;
+  color: #ffffff;
+  padding: 0 20px;
+  margin-left: 15px;
+  border: none;
+}
