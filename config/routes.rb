@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   get 'messages/index'
   root to: "rooms#index"
   resources :users, only:[:edit, :update]
-  resources :rooms, only:[:new, :create]
+  resources :rooms, only:[:new, :create] do
+    resources :messages, only:[:index, :create]
+    # どのルームで投稿されたメッセージなのかをパスから判断できるようにしたいので、ルーティングのネストを利用。
+  end
+  
 end
