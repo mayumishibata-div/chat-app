@@ -2,52 +2,37 @@
 <div class="chat-header">
   <div class="left-header">
     <div class="header-title">
-      hogefuga
+      <%= @room.name %>
     </div>
   </div>
   <div class="right-header">
     <div class="header-button">
-      <a href="#">チャットを終了する</a>
+      <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
+      <%# 削除するチャットルームを区別するために、定義している@roomを引数に %>
+      <%# <a href="#">チャットを終了する</a> %>
     </div>
   </div>
 </div>
 
 <%# メッセージ一覧 %>
 <div class="messages">
-  <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Tom
-      </div>
-      <div class="message-date">
-        2022/06/15
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        おはよう
-      </div>
-    </div>
-  </div>
+<%# _message.html.erbファイルに移動 %>
+<%= render partial: "message", collection: @messages %>
 
-  <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Tom
-      </div>
-      <div class="message-date">
-        2022/06/16
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        こんばんは
-      </div>
-    </div>
-  </div>
 </div>
 <%# main フォーム   %>
-<div class="form">
+<%= form_with model:[@room, @message], class: "form", local: true do |f|%>
+  <div class="form-input">
+    <%= f.text_field :content, class: "form-message", placeholder: "type a message" %>
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: "hidden" %>
+    </label>
+  </div>
+  <%= f.submit "送信", class: "form-submit"%>
+<% end %>
+
+<%# <div class="form">
   <div class="form-input">
     <input class="form-message" placeholder="type a message">
     <label class="form-image">
@@ -56,4 +41,4 @@
     </label>
   </div>
   <input class="form-submit" type="submit" value="送信">
-</div>
+</div> %>
