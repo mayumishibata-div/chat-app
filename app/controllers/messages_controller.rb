@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to room_messages_path(@room)
     else
-      @messages = @room.includes(:user)
+      @messages = @room.messages.includes(:user)
         # 投稿に失敗した@messageの情報を保持しつつindex.html.erbの参照可。（この時、indexアクションは経由しない）
         # そのときに@messagesが定義されていないとエラーになるのでindexアクションと同様に@messagesを定義する必要があります。
       render :index
