@@ -14,37 +14,9 @@
 
 <%# メッセージ一覧 %>
 <div class="messages">
-  <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Tom
-      </div>
-      <div class="message-date">
-        2022/06/15
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        おはよう
-      </div>
-    </div>
-  </div>
+<%# _message.html.erbファイルに移動 %>
+<%= render partial: "message", collection: @messages %>
 
-  <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Tom
-      </div>
-      <div class="message-date">
-        2022/06/16
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        こんばんは
-      </div>
-    </div>
-  </div>
 </div>
 <%# main フォーム   %>
 <%= form_with model:[@room, @message], class: "form", local: true do |f|%>
